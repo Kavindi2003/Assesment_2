@@ -58,7 +58,7 @@ class Book {
         return BookID;
     }
     public String getBorrow_Status() {
-        String availability;
+        String availability ;
         if (Borrow_Status==false){
             availability="Available";
         }else{
