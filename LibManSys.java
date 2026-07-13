@@ -119,16 +119,20 @@ public class LibManSys {
                     System.out.println("What Action do you want to carry out?");
                     System.out.println("1.Borrow Book");
                     System.out.println("2.View Books");
+                    System.out.println("3.Return Book");
                     n3 = input.nextInt();
                     input.nextLine();
                     if (n3==1)  n2=3;
                     if (n3 == 2) n2 = 2;
+                    if (n3 == 3) n2 = 4;
                     break;
                 case 3:
                     stop=true;
+                    n2 = 0;
                     break;
                 default:
                     System.out.println("Invalid Input");
+                    n2 = 0;
                     continue;
 
 
@@ -176,6 +180,30 @@ public class LibManSys {
 
                     if (!found) {
                         System.out.println("Book is unavailable (Invalid ID).");
+                    }
+                    break;
+
+                case 4:
+                    System.out.println("Enter Book ID to return: ");
+                    BookID = input.nextInt();
+                    input.nextLine();
+                    boolean foundReturn = false;
+
+                    for (Book b : list) {
+                        if (BookID == b.getBookID()) {
+                            if (!b.Borrow_Status) {
+                                System.out.println("This book is already in the library repository.");
+                            } else {
+                                b.Borrow_Status = false;
+                                System.out.println("You have successfully returned the book thank you.");
+                            }
+                            foundReturn = true;
+                            break;
+                        }
+                    }
+
+                    if (!foundReturn) {
+                        System.out.println("Invalid Book ID. Please try again.");
                     }
                     break;
 
