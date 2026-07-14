@@ -14,6 +14,7 @@ A console-based Java application designed to simulate a basic library management
 ### 2. Student Services
 * Borrow Book: Check out a book by entering its specific Book ID. If the book is already checked out or the ID is invalid, the system alerts the student.
 * View Books: Browse the existing catalog to see which books are currently Available or Not Available.
+* Return Books: Return books borrowed back through the System.
 
 ---
 
